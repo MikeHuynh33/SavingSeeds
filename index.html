@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/index.css" rel="stylesheet">
+        <!--google font family-->
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Background image will cover all modal or any displays -->
+        <div id="background_change_image"class="background_container">
+            <heade>
+                <!--HeadLine of this website -->
+                <div id="header" class="header">
+                    <h1>Welcome to SavingsSeeds</h1>
+                    <h2>Many people who are looking to achieve the dream of homeownership.</h2>
+                </div>
+            </heade>
+            <main>
+                <!--First Modal -->
+                <div id="modal_form_lay1" class="modal_form_lay_one"> 
+                    <form id="modal_form_one" class="modal_form">
+                        <div class="form-gruop-row-one">
+                            <label for="f_name">First Name :</label>
+                            <input class="input_name"type="text" id="f_name"name="f_name" placeholder="First Name">               
+                        </div>
+                        <div class="form-gruop-row-one">
+                            <label for="l_name">Last Name :</label>
+                            <input class="input_name" type="text" id="l_name" name="l_name" placeholder="First Name">                            
+                        </div>
+                        <div class="form-gruop-row-two">
+                            <label for="date_birth">Date of Birth :</label>
+                            <input class="input_date" type="date" id="date_birth" name="date_birth" placeholder="First Name">                            
+                        </div>
+                        <div class="form-gruop-row-two">
+                            <label for="email">Email :</label>
+                            <input class="input_email" type="text" id="email" name="email" placeholder="Email Address">
+                        </div>
+                        <div class="form-gruop-row-two">
+                            <label for="phone">Phone Number :</label>
+                            <input class="input_phone" type="text" id="phone" name="phone" onchange="formatPhoneNumber(this)" placeholder="(000)-000-0000">
+                        </div>    
+                        <div class="form-gruop-row-three">
+                            <button id="btn_Next"class="btn_Next">Next</button>
+                        </div>
+                    </form>
+                </div>
+                <!--Second Modal -->
+                <div id="modal_form_lay2" class="modal_form_lay_two">
+                    <form id="modal_form_two" class="modal_form_two">
+                        <div class="form-gruop-row-one">
+                            <h1>Hi <span id="username"></span> </h1>
+                            <h2>&nbsp;&nbsp;We would like to collect your personal information</h2>
+                            <h3>&nbsp;&nbsp;&nbsp;In order to provide the accurate feedback, Please take time to file the form. </h3>
+                        </div>
+                        <div class="form-gruop-row-two">
+                            <div class="form-gruop-row-two">
+                                <div class="radio_container">
+                                    <div class="radio_item">
+                                        <label for="employee">Employee</label>
+                                        <input type="radio" id="employee" name="status" value="employee">
+                                    </div>
+                                    <div class="radio_item">
+                                        <label for="student">Student</label>
+                                        <input type="radio" id="student" name="status" value="student">
+                                    </div>
+                                    <div class="radio_item">
+                                        <label for="unemployee">Unemployee</label>
+                                        <input type="radio" id="unemployee" name="status" value="unemployee">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-gruop-row-three">
+                            <label for="an_income">Annual Income :</label>
+                            <input class="input_an_income" onchange="formatCurrency(this)" type="text" id="an_income" name="an_income" placeholder="$0.00">
+                        </div>
+                        <div class="form-gruop-row-three">
+                            <label for="debt">Debt :</label>
+                            <input class="input_debt" type="text" id="debt" name="debt" onchange="formatCurrency(this)" placeholder="$0.00">
+                        </div>
+                        <div class="form-gruop-row-three">
+                            <label for="saving">Saving :</label>
+                            <input class="input_saving" type="text" id="saving" name="saving" onchange="formatCurrency(this)" placeholder="$0.00">
+                        </div>
+                        <div class="form-gruop-row-four">
+                            <label for="contribution">Contribution(monthly) :</label>
+                            <input class="input_contribution" type="text" id="contribution" name="contribution" onchange="formatCurrency(this)" placeholder="$0.00">
+                        </div>
+                        <div class="form-gruop-row-four">
+                            <label for="duration">Duration :</label>
+                            <select  class="input_duration" name="duration" id="duration" form="modal_form_two">
+                                <option value="12">12 months</option>
+                                <option value="24">24 months</option>
+                                <option value="36">36 months</option>
+                                <option value="48">48 months</option>
+                                <option value="60">60 months</option>
+                                <option value="72">72 months</option>
+                                <option value="84">84 months</option>
+                            </select>
+                        </div>
+                        <div class="form-gruop-row-five">
+                            <label for="valueHouse">Value of house :</label>
+                            <input class="input_valueHouse" type="text" id="valueHouse" name="valueHouse" onchange="formatCurrency_downpayment(this)"
+                             autocomplete="off" placeholder="$0.00">
+                        </div>
+                        <div class="form-gruop-row-five">
+                            <div class="downpayment_title">5% All you need</div>
+                            <div id="downpayment" class="downpayment"></div>
+                        </div>
+                        <div class="form-gruop-row-six">
+                            <button id="btn_Next_second" class="btn_Next_second">Next</button>
+                        </div>
+                    </form>
+                </div>
+                <!--Three Modal -->
+                <div id="modal_form_lay3" class="modal_form_lay_three">
+                    <div class="finial_result">
+                        <div class="finial_result_row_one">
+                            <h1>Please take a moment ...</h1>
+                            <h2>&nbsp;&nbsp;&nbsp;&nbsp;We are analyzing your data</h2>
+                        </div>
+                        <div class="finial_result_row_two">
+                            <div class="loading_progress">
+                                <div id="loadingBar">1%</div>
+                            </div>
+                        </div>
+                        <div class="finial_result_row_three">
+                            <!--show tips while the loading run-->
+                            <div id="finial_result_adviceflex" class="finial_result_adviceflex">
+                                <div class="flex_item_header">
+                                    <img src="./images/icons-tips.png" alt="tips">
+                                    <h3>&nbsp;Helpful tips:</h3>
+                                </div>
+                                <div class="flex_item_content">
+                                    <div class="flex_item_header"><span>S&P500</span></div>
+                                    <div class="flex_item_paragraph">
+                                    <p>Historically, the SQ500 has had an average return of around 10% per year.Investing in the SQ500 can be a good option for those who want to participate in the potential growth of the US economy
+                                    as a whole, rather than trying to pick individual stocks or invest in specific sectors.</p></div>
+                                </div>
+                                <div class="flex_item_content">
+                                    <div class="flex_item_header"><span>Nasdaq</span></div>
+                                    <div class="flex_item_paragraph">
+                                        <p>Over the long-term, the NASDAQ Composite has historically delivered strong returns, with an average annual return of
+                                        around 9% over the past 10 years.Investing in the NASDAQ can provide exposure to a diverse range of technology companies, which may have the potential
+                                        for higher growth compared to more established companies in other sectors</p>
+                                    </div>
+                                </div>
+                                <div class="flex_item_content">
+                                    <div class="flex_item_header"><span>Bonds</span></div>
+                                    <div class="flex_item_paragraph">
+                                        <p>In general, bonds are considered a lower risk investment compared to stocks, and they typically offer a lower rate of
+                                        return. The average annual return for bonds over the past 10 years (as of 2021) has been around 3-4%, depending on the
+                                        type of bond and the specific time period being considered.</p>
+                                    </div>
+                                </div>
+                                <div class="flex_item_content">
+                                    <div class="flex_item_header"><span>Dividend</span></div>
+                                    <div class="flex_item_paragraph">
+                                        <p>In general, companies that pay stock dividends typically do so at a rate of 2-4% of the stock's price per year. However,
+                                        this rate can vary widely based on a number of factors, including the company's financial health, growth prospects, and
+                                        dividend policy.</p>
+                                    </div>
+                                </div>       
+                            </div>
+                            <!--after loading complete , display analized data-->
+                            <div id="finial_result_analized" class="finial_result_analized">
+                                <div class="flex_grow_row_one">
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">Target :</div>
+                                        <div class="flex_item_row_one_content"><span id="target_data"></span></div>
+                                    </div>
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">Contribution :</div>
+                                        <div class="flex_item_row_one_content"><span id="contribution_data"></span></div>
+                                    </div>
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">Duration :</div>
+                                        <div class="flex_item_row_one_content"><span id="duration_data"></span></div>
+                                    </div>
+                                </div>
+                                <div class="flex_grow_row_one_second">
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">TFSA Con-Room :</div>
+                                        <div class="flex_item_row_one_content"><span id="tsfa_room"></span></div>
+                                    </div>
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">RSSP Con-Room :</div>
+                                        <div class="flex_item_row_one_content"><span id="rssp_room"></span></div>
+                                    </div>
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">FHSA Con-Room :</div>
+                                        <div class="flex_item_row_one_content"><span id="fhsa_room"></span></div>
+                                    </div>
+                                </div>
+                                <div class="flex_grow_row_two">
+                                    <div class="flex_item_row_two">
+                                        <div class="flex_item_row_one_header">Saving Account After <span id="duration_savingaccount"></span>:</div>
+                                        <div class="flex_item_row_one_content"><span id="Saving_account"></span></div>
+                                    </div>
+                                    <div class="flex_item_row_two">
+                                        <div class="flex_item_row_one_header">Investment Account After <span id="duration_investingaccount"></span></div>
+                                        <div class="flex_item_row_one_content"><span id="Investing_account"></span></div>
+                                    </div>
+                                </div>
+                                <div class="flex_grow_row_three">
+                                    <div class="flex_item_row_one">
+                                        <div class="flex_item_row_one_header">If You Invest Your Money, Here Is Our Estimation:</div>
+                                        <div class="flex_item_row_one_content"><span id="Final_result"></span></div>
+                                    </div>
+                                </div>
+                                <button id="btn_return" class="btn_return">Would you like to do it again ?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <foot>
+    </foot>
+        <!--Addiontional Javascripts for user experience -->
+        <script>
+            //format for phone number input
+            function formatPhoneNumber(input) {
+                let value = input.value.replace(/\D/g, '');
+                if (value.length === 0) {
+                    input.value = '';
+                }
+                else {
+                    input.value = '(' + value.slice(0, 3) + ')-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+                }
+            }
+            // format input for saving ,debt,and income field. 
+            function formatCurrency(input) {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    input.value = '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                }
+            }
+            // format input for downpayment , calculate 5% downpayment to render in <div class=downpayment>
+            function formatCurrency_downpayment(input) {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    input.value = '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    value * 0.05;
+                    const downpayment = value * 0.05;
+                    document.getElementById("downpayment").innerHTML = '$' + downpayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });;
+                }
+            }
+            
+        </script>
+    <script src="./js/index.js"> </script> 
+</html>
