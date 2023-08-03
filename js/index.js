@@ -273,6 +273,7 @@ window.addEventListener("load", function () {
   preloadImages();
   // call interval for every 20s
   this.setInterval(changeBackground, 20000);
+  console.log("url('../" + images_sliding[currentIndex] + "')");
   const btn_Next = document.getElementById("btn_Next");
   const btn_Next_two = document.getElementById("btn_Next_second");
   // First button clicked
