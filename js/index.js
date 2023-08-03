@@ -44,10 +44,10 @@ window.addEventListener("load", function () {
 
   // list of images that will change automatically on background page
   const images_sliding = [
-    "/images/Toronto-morning.jpg",
-    "/images/Toronto-moon.jpg",
-    "/images/Toronto-evening.jpg",
-    "/images/Toronto-night.jpg",
+    "../images/Toronto-morning.jpg",
+    "../images/Toronto-moon.jpg",
+    "../images/Toronto-evening.jpg",
+    "../images/Toronto-night.jpg",
   ];
   // Variables
   var currentIndex = 0;
