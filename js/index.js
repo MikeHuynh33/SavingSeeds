@@ -268,7 +268,7 @@ window.addEventListener("load", function () {
     // simple math, to make sure the index increase by 1 and in range (images).
     currentIndex = (currentIndex + 1) % images_sliding.length;
     background.style.backgroundImage =
-      "url('" + images_sliding[currentIndex] + "')";
+      "url(" + images_sliding[currentIndex] + ")";
   }
   preloadImages();
   // call interval for every 20s
