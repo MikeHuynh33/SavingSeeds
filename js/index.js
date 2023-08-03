@@ -44,10 +44,10 @@ window.addEventListener("load", function () {
 
   // list of images that will change automatically on background page
   const images_sliding = [
-    "/images/Toronto-morning.jpg",
-    "/images/Toronto-moon.jpg",
-    "/images/Toronto-evening.jpg",
-    "/images/Toronto-night.jpg",
+    "./images/Toronto-morning.jpg",
+    "./images/Toronto-moon.jpg",
+    "./images/Toronto-evening.jpg",
+    "./images/Toronto-night.jpg",
   ];
   // Variables
   var currentIndex = 0;
@@ -268,7 +268,7 @@ window.addEventListener("load", function () {
     // simple math, to make sure the index increase by 1 and in range (images).
     currentIndex = (currentIndex + 1) % images_sliding.length;
     background.style.backgroundImage =
-      "url('../" + images_sliding[currentIndex] + "')";
+      "url('" + images_sliding[currentIndex] + "')";
   }
   preloadImages();
   // call interval for every 20s
